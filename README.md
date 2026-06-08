@@ -1,10 +1,28 @@
 <!-- See COPYING.txt for license details. -->
+<h1 align="center"><a href='https://rogue-master.net'><img src="https://lh3.googleusercontent.com/d/1EqKVTt3clsfM8pFoZVfl4kPzm9oNqWkY" width="40%"></a>
+<br><a href='https://discord.gg/gF2bBUzAFe' target='_blank'><img src='https://lh3.googleusercontent.com/d/1Ytf8DOQZuFhzWUL2Vm-TTPVrdwRt5wi-' alt='Discord' title='Discord'></a>
+&nbsp;<a href='https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release' target='_blank'><img src='https://lh3.googleusercontent.com/d/1iYQlRQXM7nA4IAdcPwvcKRSTCMoi8tug' alt='Latest PATREON Release' title='Latest PATREON Release'></a>
+&nbsp;<a href='https://github.com/RogueMaster/awesome-flipperzero-withModules' target='_blank'><img src='https://lh3.googleusercontent.com/d/1gjui0-UZNerG13PUblXjmr1YaSAjIf2k' alt='More Research / Assets' title='More Research / Assets'></a></h1>
 
-# M1 Enhanced Firmware (C3)
+## Thank you so much to our RM Pro/SUPER Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
+
+<table><tr><th><div align="left">
+This firmware is a fork of all M1 community projects! We are NOT paywalled. I will keep RM Custom Firmware the most cutting-edge with active development and updates from all projects that can be found to be useful to the community. Although there are features exclusive to this firmware, there are also many updates by the rest of the Flipper Zero community. With the help of the entire community, we get the best firmware! See the RM <a href='https://discord.gg/gF2bBUzAFe' target="_blank">Discord</a> - <a href='https://www.patreon.com/RogueMaster' target="_blank">Patreon</a>
+</div></th><th style='width:50%;'>
+This software is for experimental purposes only and is not meant for any illegal activity/purposes. We do not condone illegal activity and strongly encourage keeping transmissions to legal/valid uses allowed by law.
+</th></tr></table>
+
+#  RM M1 Enhanced Firmware
 
 Enhanced firmware for the [Monstatek M1](https://monstatek.com) multi-tool device, forked from the [original firmware](https://github.com/Monstatek/M1) with significant feature additions, Flipper Zero file compatibility, and stability improvements.
 
 > **This is a community project and is not affiliated with or endorsed by Monstatek.**
+
+<a name="latest"></a> 
+
+## Latest Updates
+
+- [Added some changes (By bedge117)](https://github.com/bedge117/M1)
 
 ## What's New in C3
 
@@ -125,9 +143,10 @@ All files use the Flipper Zero `.ir` format — you can also use IR files from t
 
 ### Prerequisites
 
-- **STM32CubeIDE 1.17+** (recommended), or
-- **ARM GCC 14.2+** with CMake and Ninja
-- **Python 3** (for post-build CRC injection)
+- **STM32CubeIDE 1.17+** (recommended), or  
+- **VS Code** with ARM GCC 14.2, CMake Tools, Cortex-Debug, and Ninja, or
+- **Linux** with ARM GCC toolchain and Ninja or
+- **MacOS** with ARM GCC toolchain, CMake Tools, and Ninja
 
 ### Build with CMake
 
@@ -150,13 +169,15 @@ Open the project directory in STM32CubeIDE and build.
 
 ### Build with Make (Linux)
 
+#### Linux
 ```bash
 make
 ```
 
 Output: `./artifacts/`
 
-## Flashing
+#### #STM32CubeIDE
+Open the project and build in the IDE.
 
 ### Via qMonstatek (recommended)
 Connect via USB and use the Firmware Update page in [qMonstatek](https://github.com/bedge117/qMonstatek).
@@ -186,6 +207,18 @@ Use an ST-Link or J-Link debugger with STM32CubeIDE or OpenOCD.
 ├── settings.ini     M1 settings (auto-generated)
 └── wifi_cred.ini    Saved WiFi credentials (auto-generated)
 ```
+
+#### MacOS
+Get prerequisites
+```bash
+make setup
+```
+Build
+```bash
+make
+```
+
+Output: `./artifacts/`
 
 ## Contributing
 

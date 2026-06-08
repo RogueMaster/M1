@@ -149,6 +149,7 @@ void m1_system_GPIO_init(void)
 *
 */
 /******************************************************************************/
+
 void m1_system_init_task(void *param)
 {
 	while (1)
@@ -171,9 +172,10 @@ void m1_system_init_task(void *param)
 			m1_i2c_hal_init(&hi2c1);
 			m1_spi_hal_init(&hspi2);
 
-			battery_service_init();
 			lp5814_init();
 			m1_lcd_init(&hspi1);
+
+			power_on_button_check();
 			m1_sdcard_init(&hsd1);
 
 			/* USART1 default config */
@@ -183,6 +185,7 @@ void m1_system_init_task(void *param)
 			huart_logdb.Init.Parity = UART_PARITY_NONE;
 			m1_logdb_init();
 
+			battery_service_init();
 			m1_wdt_init();
 			m1_tasks_init();
 			startup_config_handler();
